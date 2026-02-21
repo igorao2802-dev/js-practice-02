@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Practice 02 - Junior Edition</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Практическая работа №2: Логика</h1>
+
+      <!-- Задание 1: Валидатор -->
+      <section class="card">
+        <h3>Задание 1: Валидация входа</h3>
+        <div class="form-group">
+          <input type="text" id="ageInput" placeholder="Ваш возраст" />
+          <input
+            type="password"
+            id="passInput"
+            placeholder="Пароль (мин. 6 симв.)"
+          />
+          <button onclick="checkLogin()">Проверить</button>
+        </div>
+        <p id="loginResult" class="result"></p>
+      </section>
+
+      <!-- Задание 2: Скидки -->
+      <section class="card">
+        <h3>Задание 2: Расчет скидки</h3>
+        <div class="form-group">
+          <input type="number" id="sumInput" placeholder="Сумма заказа" />
+          <button onclick="calculateDiscount()">Рассчитать</button>
+        </div>
+        <p id="discountResult" class="result"></p>
+      </section>
+
+      <!-- Задание 3: Конвертер -->
+      <section class="card">
+        <h3>Задание 3: Конвертер (USD/EUR/RUB)</h3>
+        <div class="form-group">
+          <input type="number" id="amountInput" placeholder="Сумма в BYN" />
+          <select id="currencySelect">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="RUB">RUB</option>
+          </select>
+          <button onclick="convertCurrency()">Конвертировать</button>
+        </div>
+        <p id="convertResult" class="result"></p>
+      </section>
+
+      <!-- Задание 4: Квиз -->
+      <section class="card">
+        <h3>Задание 4: Интерактивный квиз</h3>
+        <button onclick="startQuiz()">Запустить квиз (prompt)</button>
+        <p id="quizResult" class="result"></p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
