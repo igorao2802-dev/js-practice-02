@@ -45,7 +45,7 @@ function checkLogin() {
     showMessage("Проверьте формат Email.", "message-login");
     return;
   }
-  // Дополнительное правило задания: email должен содержать букву "a"
+  // Проверка: email должен содержать букву "a"
   if (emailValue.indexOf("a") === -1) {
     setResult("loginResult", 'Email должен содержать символ "a".', true);
     showMessage("Проверьте правильность ввода Email.", "message-login");
