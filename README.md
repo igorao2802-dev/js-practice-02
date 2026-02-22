@@ -9,6 +9,82 @@
 - **CSS** — оформление и стилизация;
 - **JavaScript** — логика и функционал.
 
+
+### Как запускать:
+
+
+
+
+
+
+# js-practice-02
+
+Небольшой проект на **HTML**, **CSS** и **JavaScript**.  
+Для запуска используется **VS Code** и расширение **Live Server**.
+
+---
+
+## 🚀 Запуск проекта
+
+### Вариант 1 — без локальной копии (через ZIP)
+1. Открыть репозиторий:  
+   https://github.com/igorao2802-dev/js-practice-02/
+2. Выбрать **Code → Download ZIP**.
+3. Распаковать архив и открыть папку проекта в **VS Code**.
+4. Установить расширение **Live Server** (если оно отсутствует).
+5. Открыть файл `index.html`:
+   - через меню: **File → Open File… → index.html**  
+   - затем выбрать **Open with Live Server** (ПКМ по файлу)
+   - или через нижнюю панель VS Code — кнопку **Go Live**
+
+---
+
+## Вариант 2 — с локальной копией (через Git)
+
+### 🔹 Способ 1: через терминал
+1. Клонировать репозиторий:
+   ```bash
+   git clone https://github.com/igorao2802-dev/js-practice-02/
+
+
+2. Перейти в папку проекта:
+cd js-practice-02
+
+
+3. Открыть проект в VS Code: 
+code .
+
+4. Убедиться, что расширение Live Server установлено.
+
+5. Запустить проект:
+
+- открыть index.html
+
+- выбрать Open with Live Server
+
+###🔹 Способ 2: через меню VS Code
+1. Открыть VS Code.
+
+2. Выбрать View → Terminal.
+
+3. В терминале выполнить:
+git clone https://github.com/igorao2802-dev/js-practice-02/
+
+4. В меню выбрать File → Open Folder… и указать папку js-practice-02.
+
+
+5. Открыть index.html и запустить через Open with Live Server.
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## Ответы на контрольные вопросы. 
