@@ -7,6 +7,13 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Кнопка переключения темы -->
+    <button
+      id="theme-toggle"
+      style="position: absolute; top: 20px; right: 20px"
+    >
+      &#127769; Тёмная тема
+    </button>
     <div class="container">
       <!-- блок для статусов и общих сообщений -->
 
@@ -70,6 +77,7 @@
             min="0"
             step="0.01"
             inputmode="decimal"
+            maxlength="254"
             placeholder="Сумма заказа"
           />
           <button type="button" id="calculateDiscountBtn">Рассчитать</button>
@@ -92,6 +100,7 @@
             id="amountInput"
             name="bynAmount"
             placeholder="Сумма в BYN"
+            maxlength="254"
           />
           <select
             id="currencySelect"

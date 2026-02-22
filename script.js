@@ -1,3 +1,45 @@
+// --- ЛОГИКА ТЕМЫ (Вечерний режим) ---
+const themeButton = document.getElementById("theme-toggle");
+
+// Функция применения темы
+function applyTheme(isDark) {
+  if (isDark) {
+    document.body.classList.add("dark-theme");
+    if (themeButton) themeButton.textContent = "\u{1F31E}" + "Светлая";
+  } else {
+    document.body.classList.remove("dark-theme");
+    if (themeButton) themeButton.textContent = "\u{1F319}" + "Тёмная";
+  }
+}
+
+// Проверка сохранённой темы в LocalStorage
+let savedTheme = localStorage.getItem("theme");
+
+// Если сохранения нет, проверяем время (Вечерний режим после 18:00)
+if (savedTheme === null) {
+  const currentHour = new Date().getHours();
+  // Если время больше или равно 18, включаем тёмную тему
+  if (currentHour >= 18) {
+    savedTheme = "dark";
+  } else {
+    savedTheme = "light";
+  }
+}
+
+// Применяем тему при загрузке
+applyTheme(savedTheme === "dark");
+
+// Обработчик клика по кнопке
+if (themeButton) {
+  themeButton.addEventListener("click", function () {
+    const isDark = document.body.classList.toggle("dark-theme");
+    // Сохраняем выбор пользователя
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    applyTheme(isDark);
+  });
+}
+// -------------------------------
+
 // Курсы валют (константы)
 const RATE_USD = 2.85;
 const RATE_EUR = 3.05;
@@ -122,9 +164,9 @@ function checkLogin() {
 
 // ЗАДАНИЕ 2: Скидки
 function calculateDiscount() {
-  document
-    .getElementById("calculateDiscountBtn")
-    .addEventListener("click", calculateDiscount);
+  document;
+  //  .getElementById("calculateDiscountBtn")
+  //  .addEventListener("click", calculateDiscount);
   const sumRaw = document.getElementById("sumInput").value;
   setResult("discountResult", "");
   showMessage("");
@@ -242,7 +284,7 @@ function startQuiz() {
   )
     score++;
 
-  setResult("quizResult", `Ваш результат: ${score}/3`, false, "message-quiz");
+  setResult("quizResult", `Ваш результат: ${score}/3`, false);
   showMessage("Квиз завершён.", "message-quiz");
 }
 

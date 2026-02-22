@@ -72,3 +72,38 @@ button:hover {
   text-align: center;
   font-weight: 500;
 }
+
+/* --- Стили для тёмной темы (Вечерний режим) --- */
+body.dark-theme {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-theme h1 {
+  color: #4db5ff;
+}
+
+body.dark-theme .card {
+  background: #16213e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme input,
+body.dark-theme select {
+  background-color: #0f3460;
+  border-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-theme button {
+  background-color: #777116;
+  color: white;
+}
+
+body.dark-theme button:hover {
+  background-color: #b6ac2c;
+}
+
+body.dark-theme .section-message {
+  color: #a0a0a0;
+}
