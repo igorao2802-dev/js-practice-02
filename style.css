@@ -57,9 +57,18 @@ button:hover {
   margin-top: 15px;
   font-weight: bold;
   min-height: 1.2em;
-  color: #27ae60; /* Зеленый для успеха */
+  color: #27ae60;
 }
 
 .error {
   color: #e74c3c;
-} /* Красный для ошибок */
+}
+
+.section-message {
+  min-height: 1.2em;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  color: #34495e;
+  text-align: center;
+  font-weight: 500;
+}

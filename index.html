@@ -4,59 +4,127 @@
     <meta charset="UTF-8" />
     <title>JS Practice 02 - Junior Edition</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
+      <!-- блок для статусов и общих сообщений -->
+
       <h1>Практическая работа №2: Логика</h1>
 
       <!-- Задание 1: Валидатор -->
-      <section class="card">
-        <h3>Задание 1: Валидация входа</h3>
+      <section class="card" aria-labelledby="validatorTitle">
+        <h3 id="validatorTitle">Задание 1: Валидация входа</h3>
         <div class="form-group">
-          <input type="text" id="ageInput" placeholder="Ваш возраст" />
+          <input
+            type="number"
+            id="ageInput"
+            name="age"
+            min="0"
+            max="130"
+            inputmode="numeric"
+            placeholder="Ваш возраст"
+            aria-describedby="loginResult"
+          />
           <input
             type="password"
             id="passInput"
-            placeholder="Пароль (мин. 6 симв.)"
+            name="password"
+            placeholder="Пароль (мин. 6 симв., буквы и цифры)"
+            minlength="6"
+            pattern="(?=.*\d)(?=.*[A-Za-z]).{6,}"
+            maxlength="254"
+            title="Минимум 6 символов, буквы и цифры"
           />
-          <button onclick="checkLogin()">Проверить</button>
+          <input
+            type="email"
+            id="emailInput"
+            name="email"
+            placeholder="user@example.com"
+            required
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            maxlength="254"
+            autocomplete="email"
+            title="Введите корректный email, например user@example.com"
+            aria-describedby="loginResult"
+          />
+          <!-- aria-describedby связывает поле с блоком результата для доступности -->
+          <button type="button" id="checkLoginBtn">Проверить</button>
         </div>
+        <div
+          id="message-login"
+          class="section-message"
+          role="status"
+          aria-live="polite"
+        ></div>
         <p id="loginResult" class="result"></p>
       </section>
 
       <!-- Задание 2: Скидки -->
-      <section class="card">
-        <h3>Задание 2: Расчет скидки</h3>
+      <section class="card" aria-labelledby="discountTitle">
+        <h3 id="discountTitle">Задание 2: Расчет скидки</h3>
         <div class="form-group">
-          <input type="number" id="sumInput" placeholder="Сумма заказа" />
-          <button onclick="calculateDiscount()">Рассчитать</button>
+          <input
+            type="number"
+            id="sumInput"
+            min="0"
+            step="0.01"
+            inputmode="decimal"
+            placeholder="Сумма заказа"
+          />
+          <button type="button" id="calculateDiscountBtn">Рассчитать</button>
         </div>
+        <div
+          id="message-discount"
+          class="section-message"
+          role="status"
+          aria-live="polite"
+        ></div>
         <p id="discountResult" class="result"></p>
       </section>
 
       <!-- Задание 3: Конвертер -->
-      <section class="card">
-        <h3>Задание 3: Конвертер (USD/EUR/RUB)</h3>
+      <section class="card" aria-labelledby="converterTitle">
+        <h3 id="converterTitle">Задание 3: Конвертер (USD/EUR/RUB)</h3>
         <div class="form-group">
-          <input type="number" id="amountInput" placeholder="Сумма в BYN" />
-          <select id="currencySelect">
+          <input
+            type="number"
+            id="amountInput"
+            name="bynAmount"
+            placeholder="Сумма в BYN"
+          />
+          <select
+            id="currencySelect"
+            name="currency"
+            aria-describedby="convertResult"
+          >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="RUB">RUB</option>
           </select>
-          <button onclick="convertCurrency()">Конвертировать</button>
+          <button type="button" id="convertCurrencyBtn">Конвертировать</button>
         </div>
+        <div
+          id="message-convert"
+          class="section-message"
+          role="status"
+          aria-live="polite"
+        ></div>
         <p id="convertResult" class="result"></p>
       </section>
 
       <!-- Задание 4: Квиз -->
-      <section class="card">
-        <h3>Задание 4: Интерактивный квиз</h3>
-        <button onclick="startQuiz()">Запустить квиз (prompt)</button>
+      <section class="card" aria-labelledby="quizTitle">
+        <h3 id="quizTitle">Задание 4: Интерактивный квиз</h3>
+        <button type="button" id="startQuizBtn">Начать квиз</button>
+        <div
+          id="message-quiz"
+          class="section-message"
+          role="status"
+          aria-live="polite"
+        ></div>
         <p id="quizResult" class="result"></p>
       </section>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
