@@ -15,11 +15,11 @@
 #### Вариант 1 - без локальной копии (через ZIP)
 1. Открыть репозиторий:  
    https://github.com/igorao2802-dev/js-practice-02/
-2. Выбрать **Code → Download ZIP**.
+2. Выбрать **Code &rarr Download ZIP &rarr Укаказать место сохранения архива**.
 3. Распаковать архив и открыть папку проекта в **VS Code**.
 4. Установить расширение **Live Server** (если оно отсутствует).
 5. Открыть файл `index.html`:
-   - через меню: **File → Open File… → index.html**  
+   - через меню: **File &rarr Open File… &rarr index.html**  
    - затем выбрать **Open with Live Server** (ПКМ по файлу)
    - или через нижнюю панель VS Code — кнопку **Go Live**
 
