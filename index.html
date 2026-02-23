@@ -72,12 +72,14 @@
         <h3 id="discountTitle">Задание 2: Расчет скидки</h3>
         <div class="form-group">
           <input
-            type="number"
+            type="text"
             id="sumInput"
             min="0"
             step="0.01"
+            max="999999999.99"
             inputmode="decimal"
-            maxlength="254"
+            maxlength="15"
+            pattern="^\d+(\.\d{1,2})?$"
             placeholder="Сумма заказа"
           />
           <button type="button" id="calculateDiscountBtn">Рассчитать</button>
@@ -96,11 +98,17 @@
         <h3 id="converterTitle">Задание 3: Конвертер (USD/EUR/RUB)</h3>
         <div class="form-group">
           <input
-            type="number"
+            type="text"  
             id="amountInput"
             name="bynAmount"
             placeholder="Сумма в BYN"
-            maxlength="254"
+            inputmode="decimal"  
+            pattern="^\d+(\.\d{1,2})?$"
+            title="Введите число с максимум 2 знаками после запятой"
+            maxlength="15"
+            min="0"
+            step="0.01"
+            max="999999999.99"
           />
           <select
             id="currencySelect"

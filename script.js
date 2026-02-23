@@ -87,9 +87,9 @@ function checkLogin() {
     showMessage("Проверьте формат Email.", "message-login");
     return;
   }
-  // Проверка: email должен содержать букву "a"
-  if (emailValue.indexOf("a") === -1) {
-    setResult("loginResult", 'Email должен содержать символ "a".', true);
+  // Проверка: email должен содержать символ "@"
+  if (emailValue.indexOf("@") === -1) {
+    setResult("loginResult", 'Email должен содержать символ "@S".', true);
     showMessage("Проверьте правильность ввода Email.", "message-login");
     return;
   }
@@ -299,4 +299,36 @@ document.addEventListener("DOMContentLoaded", () => {
   if (discountBtn) discountBtn.addEventListener("click", calculateDiscount);
   if (convertBtn) convertBtn.addEventListener("click", convertCurrency);
   if (quizBtn) quizBtn.addEventListener("click", startQuiz);
-});
+
+// Ограничение ввода для поля суммы (до 2 знаков после запятой)
+const sumInput = document.getElementById("sumInput");
+if (sumInput) {
+  sumInput.addEventListener("input", function (e) {
+    const start = this.selectionStart;
+    const end = this.selectionEnd;
+    const oldValue = this.value;
+    
+    // Заменяем запятую на точку
+    let value = this.value.replace(/,/g, '.');
+    
+    // Разрешаем только цифры и одну точку
+    const match = value.match(/^\d*\.?\d{0,2}/);
+    if (match) {
+      const newValue = match[0];
+      
+      // Если значение изменилось
+      if (newValue !== oldValue) {
+        this.value = newValue;
+        
+        // Восстанавливаем позицию курсора с учетом изменений
+        const diff = newValue.length - oldValue.length;
+        const newPosition = Math.min(start + diff, newValue.length);
+        this.setSelectionRange(newPosition, newPosition);
+      }
+    } else {
+      this.value = '';
+      this.setSelectionRange(0, 0);
+    }
+  }); 
+
+ }});
